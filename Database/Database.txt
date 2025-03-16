@@ -1,1 +1,4 @@
-Database
+SQLite Database
+
+The following files work on SQLite, wasn't sure whether to put the end values on default current time as well.
+If you're going to make changes or add stuff, please specify the changes in your commit. :)
