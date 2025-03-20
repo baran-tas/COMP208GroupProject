@@ -1,8 +1,10 @@
+import Example from "@/components/example";
 
-export default function Home() {
+export default function TestPage() {
     return (
       <div>
-        Example
+        <h1>Regular h1 </h1>
+        <Example />
       </div>
     );
   }
