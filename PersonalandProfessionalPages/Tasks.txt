@@ -1,0 +1,25 @@
+Very roughly:
+
+Frontend:
+React
+
+Backend:
+Express JS
+
+
+Personal:
+	List of stores
+	Store pages -> Product pages
+	
+	Page to view orders
+
+	Functionality:
+		Pick items to put in basket
+		Have shopping basket
+		Place order
+
+
+Professional account:
+	List of orders
+	Accept/Reject orders
+	Change status
