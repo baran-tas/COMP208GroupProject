@@ -64,7 +64,7 @@ There are two high level components to integration a React based frontend and an
 
 ### Database Integration
 
-- **Database Options:** Already have a SQL schema, edit it as you wish for your purposes, make data to put in to help you with development.
+- Already have a SQL schema, edit it as you wish for your purposes, make data to put in to help you with development.
 
 ### Additional Enhancements
 
