@@ -65,7 +65,7 @@ The application is designed to serve two types of users: Personal (customers) an
 
 ### Tokens/Sessions
 
-  - Secure API endpoints using tokens or sessions to differentiate between personal and professional users, kind of relies on the login stuff being completed.
+- Secure API endpoints using tokens or sessions to differentiate between personal and professional users, kind of relies on the login stuff being completed.
 
 ### Database Integration
 
