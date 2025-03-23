@@ -1,10 +1,9 @@
-import Example from "@/components/example";
+import NavBar from "@/components/navbar";
 
 export default function OrdersPage() {
     return (
       <div>
-        <h1>Orders </h1>
-        <Example />
+        <NavBar />
       </div>
     );
   }

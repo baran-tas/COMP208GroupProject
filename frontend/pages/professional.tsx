@@ -1,10 +1,9 @@
-import Example from "@/components/example";
+import NavBar from "@/components/navbar";
 
 export default function ProfessionalPage() {
     return (
       <div>
-        <h1>Professional </h1>
-        <Example />
+        <NavBar />
       </div>
     );
   }
