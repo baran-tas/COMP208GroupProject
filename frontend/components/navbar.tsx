@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function NavBar() {
     return (
       <nav className = "fixed w-full h-25 shadow-xl">
-        <div className = "flex justify-between items-center h-full w-full px-5 2xl:px-16">
+        <div className = "flex justify-between items-center h-full w-full px-5">
             <Image
               src = "/bunnilogo.svg"
               height = "65"
