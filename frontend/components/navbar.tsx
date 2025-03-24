@@ -7,9 +7,9 @@ export default function NavBar() {
       <nav className = "sticky w-full h-25 shadow">
         <div className = "flex justify-between items-center h-full w-full px-5">
             <Image
-              src = "/bunnilogo.svg"
-              height = "65"
-              width = "65"
+              src = "/etalogo.svg"
+              height = "418"
+              width = "163"
               className = "hidden md:block"
               alt = "Bunni Soft Logo"
             />
