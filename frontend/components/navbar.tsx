@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function NavBar() {
     return (
-      <nav className = "sticky w-full h-25 shadow">
+      <nav className = "sticky w-full h-20 shadow">
         <div className = "flex justify-between items-center h-full w-full px-5">
             <Image
               src = "/etalogo.svg"
