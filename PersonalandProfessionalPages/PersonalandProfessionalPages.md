@@ -52,7 +52,7 @@ The application is designed to serve two types of users: Personal (customers) an
 
 - **Personal Account Endpoints:**
   - **Basket and Order Management:**
-    - Make an appropriate POST API endpoint for adding items to shopping basked.
+    - Make an appropriate POST API endpoint for adding items to shopping basket.
     - Make an appropriate GET API endpoint for retrieving the current basket data.
     - Make an appropriate POST API endpoint for placing an order for the items in the basket.
     - Make an appropriate GET API endpoint for retrieving the order history.
