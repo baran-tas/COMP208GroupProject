@@ -39,7 +39,7 @@ CREATE TABLE Products (
     description TEXT, --Stores a description of the product
     price REAL NOT NULL, --Stores the price of the product
     image_url TEXT, --Stores the product's image
-    is_available INTEGER DEFAULT 1 CHECK(is_available IN (0, 1), --Stores flag to determine availability
+    is_available INTEGER DEFAULT 1 CHECK(is_available IN (0, 1)), --Stores flag to determine availability
     FOREIGN KEY(professional_id) REFERENCES Professional(id) --Establishes foreign key constraint
 );
 
@@ -47,10 +47,12 @@ CREATE TABLE Products (
 CREATE TABLE Orders (
     id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic order ids
     user_id INTEGER NOT NULL, --Foreign key to Personal table
+    store_id INTEGER NOT NULL, --Foreign key to Professional table
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Stores the order's timestamp
     total REAL NOT NULL, --Stores the order's total cost
     status TEXT CHECK(status IN ('pending', 'completed', 'cancelled')) NOT NULL, --Stores the order's status
-    FOREIGN KEY(user_id) REFERENCES Personal(id) --Establishes foreign key constraint
+    FOREIGN KEY(user_id) REFERENCES Personal(id), --Establishes foreign key constraint
+    FOREIGN KEY(store_id) REFERENCES Professional(id) --Establishes foreign key constraint
 );
 
 --Table to manage reviews
@@ -61,6 +63,17 @@ CREATE TABLE Reviews (
     rating INTEGER CHECK(rating BETWEEN 1 AND 5) NOT NULL, --Stores the rating
     comment TEXT, --Stores the review text
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Stores the review's timestamp
+    FOREIGN KEY(user_id) REFERENCES Personal(id), --Establishes foreign key constraint
+    FOREIGN KEY(product_id) REFERENCES Products(id) --Establishes foreign key constraint
+);
+
+--Table to manage basket items
+CREATE TABLE Basket (
+    id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic basket item ids
+    user_id INTEGER NOT NULL, --Foreign key to the Personal table
+    product_id INTEGER NOT NULL, --Foreign key to the Products table
+    quantity INTEGER NOT NULL DEFAULT 1, --Stores the number of units of product
+    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Stores the timestamp of when the item was added
     FOREIGN KEY(user_id) REFERENCES Personal(id), --Establishes foreign key constraint
     FOREIGN KEY(product_id) REFERENCES Products(id) --Establishes foreign key constraint
 );
