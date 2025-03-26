@@ -92,7 +92,7 @@ app.get('/api/storeorders', (req, res) => {
     return res.status(400).json({ error: 'storeId query parameter is required' });
   }
   
-  // SQL query to retrieve orders for the given store, ordered by order_date in descending order
+  //SQL query to retrieve orders for the given store, ordered by order_date in descending order
   const sql = 'SELECT * FROM Orders WHERE store_id = ? ORDER BY order_date DESC';
   
   db.all(sql, [storeId], (err, rows) => {
@@ -106,5 +106,5 @@ app.get('/api/storeorders', (req, res) => {
 
 
 
-// Start the server
+//Start the server
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
