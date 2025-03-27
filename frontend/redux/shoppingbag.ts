@@ -4,16 +4,23 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface ShoppingBagItem {
   id: string | number;
   quantity: number;
-  [key: string]: any; // For any additional properties
+  [key: string]: any; 
 }
 
 interface ShoppingBagState {
   shoppingbag: ShoppingBagItem[];
 }
 
+const shoppingBagItem: ShoppingBagItem = {
+  id: "item-001",
+  quantity: 2,
+  name: "Organic Milk",
+  price: 3.99,
+  category: "Dairy"
+};
 // Initial state with type
 const initialState: ShoppingBagState = {
-  shoppingbag: [],
+  shoppingbag: [shoppingBagItem],
 };
 
 export const shoppingbagSlice = createSlice({
