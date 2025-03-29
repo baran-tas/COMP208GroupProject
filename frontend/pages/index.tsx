@@ -12,28 +12,28 @@ export default function Home() {
       <div className = "w-full mt-2 grid grid-cols-3 place-items-center gap-3">
         <div>
           <Image
-            src = "/placeholder.svg"
+            src = "/PH1.svg"
             height = "1050"
             width = "591"
-            className = "hidden md:block hover:shadow-xl"
+            className = "hidden md:block hover:shadow-xl rounded-md"
             alt = "Placeholder Image"
           />
         </div>
         <div>
           <Image
-            src = "/placeholder.svg"
+            src = "/PH2.svg"
             height = "1050"
             width = "591"
-            className = "hidden md:block hover:shadow-xl"
+            className = "hidden md:block hover:shadow-xl rounded-md"
             alt = "Placeholder Image"
           />
         </div>
         <div>
           <Image
-            src = "/placeholder.svg"
+            src = "/PH3.svg"
             height = "1050"
             width = "591"
-            className = "hidden md:block hover:shadow-xl"
+            className = "hidden md:block hover:shadow-xl rounded-md"
             alt = "Placeholder Image"
           />
         </div>
