@@ -16,16 +16,16 @@ export default function NavBar() {
           <div>
             <ul className = "hidden sm:flex">
               <Link href = "/">
-                <li className = "ml-10 hover:border-b text-xl text-white font-bold">Home</li>
+                <li className = "ml-10 text-xl text-white font-bold">Home</li>
               </Link>
               <Link href = "/stores">
-                <li className = "ml-10 hover:border-b text-xl text-white font-bold">Stores</li>
+                <li className = "ml-10 text-xl text-white font-bold">Stores</li>
               </Link>
               <Link href = "/orders">
-                <li className = "ml-10 hover:border-b text-xl text-white font-bold">Orders</li>
+                <li className = "ml-10 text-xl text-white font-bold">Orders</li>
               </Link>
               <Link href = "/professional">
-                <li className = "ml-10 hover:border-b text-xl text-white font-bold">Professional</li>
+                <li className = "ml-10 text-xl text-white font-bold">Professional</li>
               </Link>
             </ul>
           </div>
