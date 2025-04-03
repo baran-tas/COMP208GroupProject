@@ -7,7 +7,7 @@ Project ETA in essence is a low cost/comission solution to connect foodies and l
 Project ETA is built with modern technologies to ensure scalability, performance, and a seamless user experience:
 - **Frontend:** React
 - **Backend:** Express.js
-- **Database:** SQLite
+- **Database:** MySQL
 - **Payment Integration:** Stripe (optional, got to get an MVP first)
 
 ## Getting Started
