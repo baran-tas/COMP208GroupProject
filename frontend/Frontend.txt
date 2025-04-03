@@ -1,0 +1,9 @@
+Basically the only 2 important folders are the components and the pages
+Ignore everything else
+
+Get the project started via npm install / npm run dev
+Make sure you are in the frontend folder
+
+Look at test.tsx
+http://localhost:3000/test
+

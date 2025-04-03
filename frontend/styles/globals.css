@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+
+}
+
+@theme inline {
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+  }
+}
+
+body {
+  margin-top: 0;
+}
