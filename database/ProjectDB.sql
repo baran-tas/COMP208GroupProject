@@ -1,79 +1,87 @@
 --Table to manage users
 CREATE TABLE Users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic user ids
-    username TEXT NOT NULL UNIQUE, --Username based on some criterion
-    email TEXT NOT NULL UNIQUE, --Takes email, could also add a field for phone number
-    password TEXT NOT NULL, --Hash the password then store it
-    account_type TEXT CHECK(account_type IN ('personal', 'professional')) NOT NULL, --Determines the account type
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP --Saves the timestamp at which the account was created, why not?
+    id INT NOT NULL AUTO_INCREMENT, --Automatic user ids
+    username VARCHAR(255) NOT NULL UNIQUE, --Username based on some criterion
+    email VARCHAR(255) NOT NULL UNIQUE, --Takes email, could also add a field for phone number
+    password VARCHAR(255) NOT NULL, --Hash the password then store it
+    account_type ENUM('personal', 'professional') NOT NULL, --Determines the account type
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Saves the timestamp at which the account was created, why not?
+    PRIMARY KEY (id) --Primary key constraint
 );
 
 --Table for users with a personal account
+--Optional: Could make it one to many at some point, but that's a matter of getting a minimum viable product soon enough
 CREATE TABLE Personal (
-    id INTEGER PRIMARY KEY, --Foreign key to Users table
-    first_name TEXT NOT NULL, --First name of personal account user
-    last_name TEXT NOT NULL, --Last name of personal account user
-    phone TEXT, --You don't need a phone number, could have it though
-    FOREIGN KEY(id) REFERENCES Users(id) --Establishes foreign key constraint
+    id INT NOT NULL, --Stores the id
+    first_name VARCHAR(255) NOT NULL, --First name of personal account user
+    last_name VARCHAR(255) NOT NULL, --Last name of personal account user
+    phone VARCHAR(11), --You don't need a phone number, could have it though
+    PRIMARY KEY (id), --Primary key constraint
+    FOREIGN KEY (id) REFERENCES Users(id) --Foreign key to Users table
 );
 
 --Table for users with a professional account
---Optional: Could make it one to many at some point, but that's a matter of getting a minimum viable product soon enough
 CREATE TABLE Professional (
-    id INTEGER PRIMARY KEY,  --Foreign key to Users table
-    tax_id TEXT NOT NULL UNIQUE, --Stores the store's tax id
-    store_name TEXT NOT NULL UNIQUE, --Stores the store's name
+    id INT NOT NULL, --Stores the id
+    tax_id VARCHAR(50) NOT NULL UNIQUE, --Stores the store's tax id
+    store_name VARCHAR(255) NOT NULL UNIQUE, --Stores the store's name
     store_description TEXT, --Stores the store's description, can be null
-    phone TEXT NOT NULL, --Stores the store's number
-    address TEXT NOT NULL, --Stores the store's address
-    establishment_type TEXT CHECK(establishment_type IN ('Cafe', 'Restaurant', 'Food Truck', 'Fast Food')) NOT NULL, --Stores the store's type
-    establishment_website TEXT, --Stores the establishment's website
-    FOREIGN KEY(id) REFERENCES Users(id) --Establishes foreign key constraint
+    phone VARCHAR(20) NOT NULL, --Stores the store's number
+    address VARCHAR(255) NOT NULL, --Stores the store's address
+    establishment_type ENUM('Cafe', 'Restaurant', 'Food Truck', 'Fast Food') NOT NULL, --Stores the store's type
+    establishment_website VARCHAR(255), --Stores the establishment's website
+    PRIMARY KEY (id), --Primary key constraint
+    FOREIGN KEY (id) REFERENCES Users(id) --Foreign key to Users table
 );
 
 --Table to manage products
 CREATE TABLE Products (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic product ids
-    professional_id INTEGER NOT NULL, --Foreign key to Professional table
-    name TEXT NOT NULL, --Stores product's name
+    id INT NOT NULL AUTO_INCREMENT, --Automatic product ids
+    professional_id INT NOT NULL, --Foreign key to Professional table
+    name VARCHAR(255) NOT NULL, --Stores product's name
     description TEXT, --Stores a description of the product
-    price REAL NOT NULL, --Stores the price of the product
-    image_url TEXT, --Stores the product's image
-    is_available INTEGER DEFAULT 1 CHECK(is_available IN (0, 1)), --Stores flag to determine availability
-    FOREIGN KEY(professional_id) REFERENCES Professional(id) --Establishes foreign key constraint
+    price DECIMAL(10,2) NOT NULL, --Stores the price of the product
+    image_url VARCHAR(255), --Stores the product's image
+    is_available TINYINT(1) DEFAULT 1, --Stores flag to determine availability
+    PRIMARY KEY (id), --Primary key constraint
+    FOREIGN KEY (professional_id) REFERENCES Professional(id) --Foreign key to Professional table
 );
 
 --Table to manage orders
 CREATE TABLE Orders (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic order ids
-    user_id INTEGER NOT NULL, --Foreign key to Personal table
-    store_id INTEGER NOT NULL, --Foreign key to Professional table
+    id INT NOT NULL AUTO_INCREMENT, --Automatic order ids
+    user_id INT NOT NULL, --Foreign key to Personal table
+    store_id INT NOT NULL, --Foreign key to Professional table
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Stores the order's timestamp
-    total REAL NOT NULL, --Stores the order's total cost
-    status TEXT CHECK(status IN ('pending', 'completed', 'cancelled')) NOT NULL, --Stores the order's status
-    FOREIGN KEY(user_id) REFERENCES Personal(id), --Establishes foreign key constraint
-    FOREIGN KEY(store_id) REFERENCES Professional(id) --Establishes foreign key constraint
+    total DECIMAL(10,2) NOT NULL, --Stores the order's total cost
+    status ENUM('pending', 'completed', 'cancelled') NOT NULL,
+    PRIMARY KEY (id), --Primary key constraint
+    FOREIGN KEY (user_id) REFERENCES Personal(id), --Foreign key to Personal table
+    FOREIGN KEY (store_id) REFERENCES Professional(id) --Foreign key to Professional table
 );
 
 --Table to manage reviews
 CREATE TABLE Reviews (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic review ids
-    user_id INTEGER NOT NULL, --Foreign key to Personal table
-    product_id INTEGER NOT NULL, --Foreign key to Products table
-    rating INTEGER CHECK(rating BETWEEN 1 AND 5) NOT NULL, --Stores the rating
+    id INT NOT NULL AUTO_INCREMENT, --Automatic review ids
+    user_id INT NOT NULL, --Foreign key to Personal table
+    product_id INT NOT NULL, --Foreign key to Products table
+    rating INT NOT NULL, --Stores the rating
     comment TEXT, --Stores the review text
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Stores the review's timestamp
-    FOREIGN KEY(user_id) REFERENCES Personal(id), --Establishes foreign key constraint
-    FOREIGN KEY(product_id) REFERENCES Products(id) --Establishes foreign key constraint
+    PRIMARY KEY (id), --Primary key constraint
+    FOREIGN KEY (user_id) REFERENCES Personal(id), --Foreign key to Personal table
+    FOREIGN KEY (product_id) REFERENCES Products(id), --Foreign key to Products table
+    CHECK (rating BETWEEN 1 AND 5) --Checks if the rating is between 1 and 5
 );
 
 --Table to manage basket items
 CREATE TABLE Basket (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, --Automatic basket item ids
-    user_id INTEGER NOT NULL, --Foreign key to the Personal table
-    product_id INTEGER NOT NULL, --Foreign key to the Products table
-    quantity INTEGER NOT NULL DEFAULT 1, --Stores the number of units of product
+    id INT NOT NULL AUTO_INCREMENT, --Automatic basket item ids
+    user_id INT NOT NULL, --Foreign key to the Personal table
+    product_id INT NOT NULL, --Foreign key to the Products table
+    quantity INT NOT NULL DEFAULT 1, --Stores the number of units of product
     date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP, --Stores the timestamp of when the item was added
-    FOREIGN KEY(user_id) REFERENCES Personal(id), --Establishes foreign key constraint
-    FOREIGN KEY(product_id) REFERENCES Products(id) --Establishes foreign key constraint
+    PRIMARY KEY (id), --Primary key constraint
+    FOREIGN KEY (user_id) REFERENCES Personal(id), --Foreign key to Personal table
+    FOREIGN KEY (product_id) REFERENCES Products(id) --Foreign key to Products table
 );
