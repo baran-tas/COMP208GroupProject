@@ -18,3 +18,9 @@ Project ETA is built with modern technologies to ensure scalability, performance
 
 ### Setup
 Clone the repo and we can get started :D
+
+
+
+
+cd frontend && npm run dev
+cd backend && npm run dev
