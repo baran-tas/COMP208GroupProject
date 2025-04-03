@@ -6,37 +6,8 @@ export default function Home() {
   return (
     <div>
       <div><NavBar /></div>
-      <div className = "mt-6 ml-6">
-        <h1 className = {`${figtree.className} hidden md:block text-4xl`}>Stores Close To You</h1>
-      </div>
-      <div className = "w-full mt-2 grid grid-cols-3 place-items-center gap-3">
-        <div>
-          <Image
-            src = "/placeholder.svg"
-            height = "1050"
-            width = "591"
-            className = "hidden md:block hover:shadow-xl"
-            alt = "Placeholder Image"
-          />
-        </div>
-        <div>
-          <Image
-            src = "/placeholder.svg"
-            height = "1050"
-            width = "591"
-            className = "hidden md:block hover:shadow-xl"
-            alt = "Placeholder Image"
-          />
-        </div>
-        <div>
-          <Image
-            src = "/placeholder.svg"
-            height = "1050"
-            width = "591"
-            className = "hidden md:block hover:shadow-xl"
-            alt = "Placeholder Image"
-          />
-        </div>
+      <div className = "flex justify-center mt-20">
+        <h1 className = {`${figtree.className} text-6xl`}>Order To Pickup, Anywhere.</h1>
       </div>
     </div>
   );
