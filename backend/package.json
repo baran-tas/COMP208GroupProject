@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "js/app.js",
   
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
+    "dev": "nodemon js/app.js",
+    "start": "node js/app.js",
     "migrate": "node ./migrations/run-migrations.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
