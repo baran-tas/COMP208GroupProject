@@ -8,7 +8,12 @@ INSERT INTO Users (id, username, email, passw, account_type) VALUES
 (7, 'store7', 'email7@store.com', 'password7', 'professional'),
 (8, 'store8', 'email8@store.com', 'password8', 'professional'),
 (9, 'store9', 'email9@store.com', 'password9', 'professional'),
-(10, 'store10', 'email10@store.com', 'password10', 'professional');
+(10, 'store10', 'email10@store.com', 'password10', 'professional'),
+(11, 'user1', 'user1@example.com', 'pass1', 'personal'),
+(12, 'user2', 'user2@example.com', 'pass2', 'personal'),
+(13, 'user3', 'user3@example.com', 'pass3', 'personal'),
+(14, 'user4', 'user4@example.com', 'pass4', 'personal'),
+(15, 'user5', 'user5@example.com', 'pass5', 'personal');
 
 INSERT INTO Professional (id, tax_id, store_name, store_description, phone, address, establishment_type, establishment_website) VALUES
 (1, 'taxid1', 'Coffee Shop', 'Cozy cafe serving coffee and pastries', '02011588811', '231 Coffee Shop Avenue', 'Cafe', 'https://coffeeshop.co.uk'),
@@ -21,6 +26,13 @@ INSERT INTO Professional (id, tax_id, store_name, store_description, phone, addr
 (8, 'taxid8', 'Doughnut Shop', 'Doughnuts, doughnuts, and doughnuts', '02067370931', '689 Fried Goods Lane', 'Fast Food', 'https://doughnutshop.co.uk'),
 (9, 'taxid9', 'Salad Bar', 'Healthy salads and vegan food', '02023816087', '143 Vegan Food Street', 'Cafe', 'https://saladbar.co.uk'),
 (10, 'taxid10', 'Texan BBQ', 'Smoked Texan meat and BBQ', '02034829695', '594 Texas Lane', 'Fast Food', 'https://texanbbq.co.uk');
+
+INSERT INTO Personal (id, first_name, last_name, phone) VALUES
+(1, 'John', 'Doe', '1234567890'),
+(2, 'Jane', 'Doe', '2345678901'),
+(3, 'Michael', 'Doe', '3456789012'),
+(4, 'Bob', 'Doe', '4567890123'),
+(5, 'Alice', 'Doe', '5678901234');
 
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (1, 'Espresso', 'Strong and bold espresso', 2.99, 'https://coffeeshop.co.uk/espresso.png', 1),
@@ -121,3 +133,25 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (10, 'Burnt Ends', 'Crispy, flavorful burnt ends', 10.49, 'https://texanbbq.co.uk/burntends.png', 1),
 (10, 'BBQ Beans', 'Hearty BBQ beans', 5.99, 'https://texanbbq.co.uk/bbqbeans.png', 1),
 (10, 'Coleslaw', 'Classic coleslaw with tangy dressing', 4.99, 'https://texanbbq.co.uk/coleslaw.png', 1);
+
+INSERT INTO Orders (user_id, store_id, order_date, total, status) VALUES
+(1, 3, '2024-01-01 10:00:00', 24.99, 'pending'),
+(2, 4, '2024-01-02 11:15:00', 42.50, 'completed'),
+(3, 5, '2024-01-13 12:30:00', 19.95, 'cancelled'),
+(4, 1, '2024-01-04 09:45:00', 58.00, 'completed'),
+(5, 2, '2024-01-25 08:30:00', 35.75, 'pending'),
+(1, 10, '2025-01-06 14:00:00', 99.99, 'completed'),
+(2, 9, '2025-01-17 15:30:00', 12.50, 'pending'),
+(3, 8, '2025-01-08 16:45:00', 47.25, 'cancelled'),
+(4, 7, '2025-01-09 17:00:00', 66.66, 'completed'),
+(5, 6, '2024-01-10 18:15:00', 55.55, 'pending'),
+(1, 4, '2024-01-11 10:30:00', 23.45, 'completed'),
+(2, 3, '2024-01-12 11:45:00', 89.90, 'pending'),
+(3, 2, '2025-01-13 12:00:00', 150.00, 'completed'),
+(4, 8, '2025-01-14 13:15:00', 75.00, 'pending'),
+(5, 10, '2025-01-15 14:30:00', 120.30, 'completed'),
+(1, 9, '2025-01-16 15:45:00', 65.25, 'cancelled'),
+(2, 7, '2025-01-17 16:00:00', 34.99, 'completed'),
+(3, 6, '2025-01-18 17:15:00', 80.00, 'pending'),
+(4, 5, '2024-01-19 18:30:00', 45.00, 'completed'),
+(5, 1, '2025-01-20 19:45:00', 59.99, 'pending');
