@@ -1,30 +1,27 @@
---Users
-INSERT INTO Users (id, username, email, password, account_type) VALUES
-  (1, 'store1', 'email1@store.com', 'password1', 'professional'),
-  (2, 'store2', 'email2@store.com', 'password2', 'professional'),
-  (3, 'store3', 'email3@store.com', 'password3', 'professional'),
-  (4, 'store4', 'email4@store.com', 'password4', 'professional'),
-  (5, 'store5', 'email5@store.com', 'password5', 'professional'),
-  (6, 'store6', 'email6@store.com', 'password6', 'professional'),
-  (7, 'store7', 'email7@store.com', 'password7', 'professional'),
-  (8, 'store8', 'email8@store.com', 'password8', 'professional'),
-  (9, 'store9', 'email9@store.com', 'password9', 'professional'),
-  (10, 'store10', 'email10@store.com', 'password10', 'professional');
+INSERT INTO Users (id, username, email, passw, account_type) VALUES
+(1, 'store1', 'email1@store.com', 'password1', 'professional'),
+(2, 'store2', 'email2@store.com', 'password2', 'professional'),
+(3, 'store3', 'email3@store.com', 'password3', 'professional'),
+(4, 'store4', 'email4@store.com', 'password4', 'professional'),
+(5, 'store5', 'email5@store.com', 'password5', 'professional'),
+(6, 'store6', 'email6@store.com', 'password6', 'professional'),
+(7, 'store7', 'email7@store.com', 'password7', 'professional'),
+(8, 'store8', 'email8@store.com', 'password8', 'professional'),
+(9, 'store9', 'email9@store.com', 'password9', 'professional'),
+(10, 'store10', 'email10@store.com', 'password10', 'professional');
 
---Professionals linked to Users
 INSERT INTO Professional (id, tax_id, store_name, store_description, phone, address, establishment_type, establishment_website) VALUES
-  (1, 'taxid1', 'Coffee Shop', 'Cozy cafe serving coffee and pastries', '02011588811', '231 Coffee Shop Avenue', 'Cafe', 'https://coffeeshop.co.uk'),
-  (2, 'taxid2', 'Burger Place', 'Modern fast food burger joint', '02049498172', '546 Buger Place', 'Fast Food', 'https://burgerplace.co.uk'),
-  (3, 'taxid3', 'Pizza Palace', 'Hot, fast, and tasty pizza', '02038392914', '723 Pizza Lane', 'Restaurant', 'https://pizzapalace.co.uk'),
-  (4, 'taxid4', 'Taco Town', 'Street style tacos', '02093504003', '429 Taco City', 'Food Truck', 'https://tacotown.co.uk'),
-  (5, 'taxid5', 'Sandwich Shop', 'Quick and tasty sandwiches', '02052432881', '582 Sandwich Corner', 'Cafe', 'https://sandwichshop.co.uk'),
-  (6, 'taxid6', 'Chinese Food Place', 'Fresh traditional Chinese food', '02040797165', '312 China Town', 'Restaurant', 'https://chinesefoodplace.co.uk'),
-  (7, 'taxid7', 'Pasta Place', 'Great, fresh pasta', '02077849621', '289 Pasta Road', 'Restaurant', 'https://pastaplace.co.uk'),
-  (8, 'taxid8', 'Doughnut Shop', 'Doughnuts, doughnuts, and doughnuts', '02067370931', '689 Fried Goods Lane', 'Fast Food', 'https://doughnutshop.co.uk'),
-  (9, 'taxid9', 'Salad Bar', 'Healthy salads and vegan food', '02023816087', '143 Vegan Food Street', 'Cafe', 'https://saladbar.co.uk'),
-  (10, 'taxid10', 'Texan BBQ', 'Smoked Texan meat and BBQ', '02034829695', '594 Texas Lane', 'Fast Food', 'https://texanbbq.co.uk');
+(1, 'taxid1', 'Coffee Shop', 'Cozy cafe serving coffee and pastries', '02011588811', '231 Coffee Shop Avenue', 'Cafe', 'https://coffeeshop.co.uk'),
+(2, 'taxid2', 'Burger Place', 'Modern fast food burger joint', '02049498172', '546 Buger Place', 'Fast Food', 'https://burgerplace.co.uk'),
+(3, 'taxid3', 'Pizza Palace', 'Hot, fast, and tasty pizza', '02038392914', '723 Pizza Lane', 'Restaurant', 'https://pizzapalace.co.uk'),
+(4, 'taxid4', 'Taco Town', 'Street style tacos', '02093504003', '429 Taco City', 'Food Truck', 'https://tacotown.co.uk'),
+(5, 'taxid5', 'Sandwich Shop', 'Quick and tasty sandwiches', '02052432881', '582 Sandwich Corner', 'Cafe', 'https://sandwichshop.co.uk'),
+(6, 'taxid6', 'Chinese Food Place', 'Fresh traditional Chinese food', '02040797165', '312 China Town', 'Restaurant', 'https://chinesefoodplace.co.uk'),
+(7, 'taxid7', 'Pasta Place', 'Great, fresh pasta', '02077849621', '289 Pasta Road', 'Restaurant', 'https://pastaplace.co.uk'),
+(8, 'taxid8', 'Doughnut Shop', 'Doughnuts, doughnuts, and doughnuts', '02067370931', '689 Fried Goods Lane', 'Fast Food', 'https://doughnutshop.co.uk'),
+(9, 'taxid9', 'Salad Bar', 'Healthy salads and vegan food', '02023816087', '143 Vegan Food Street', 'Cafe', 'https://saladbar.co.uk'),
+(10, 'taxid10', 'Texan BBQ', 'Smoked Texan meat and BBQ', '02034829695', '594 Texas Lane', 'Fast Food', 'https://texanbbq.co.uk');
 
---Products for Coffee Shop
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (1, 'Espresso', 'Strong and bold espresso', 2.99, 'https://coffeeshop.co.uk/espresso.png', 1),
 (1, 'Cappuccino', 'Creamy cappuccino with froth', 3.99, 'https://coffeeshop.co.uk/cappuccino.png', 1),
@@ -35,7 +32,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (1, 'Frappuccino', 'Blended iced coffee drink', 4.99, 'https://coffeeshop.co.uk/frappuccino.png', 1),
 (1, 'Tea', 'Regular black tea', 2.49, 'https://coffeeshop.co.uk/tea.png', 1);
 
---Products for Burger Place
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (2, 'Classic Burger', 'Beef burger with lettuce, tomato, and cheese', 5.99, 'https://burgerplace.co.uk/classicburger.png', 1),
 (2, 'Cheeseburger', 'Burger with a slice of cheese', 6.49, 'https://burgerplace.co.uk/cheeseburger.png', 1),
@@ -46,7 +42,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (2, 'Spicy Burger', 'Spicy burger', 6.99, 'https://burgerplace.co.uk/spicyburger.png', 1),
 (2, 'Slider', 'Slider burger', 3.99, 'https://burgerplace.co.uk/slider.png', 1);
 
---Products for Pizza Palace
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (3, 'Margherita Pizza', 'Classic pizza with tomato, mozzarella, and basil', 7.99, 'https://pizzapalace.co.uk/margheritapizza.png', 1),
 (3, 'Pepperoni Pizza', 'Pizza topped with pepperoni slices', 8.99, 'https://pizzapalace.co.uk/pepperonipizza.png', 1),
@@ -57,7 +52,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (3, 'Supreme Pizza', 'Pizza with a variety of toppings', 9.49, 'https://pizzapalace.co.uk/supremepizza.png', 1),
 (3, 'Cheese Pizza', 'Simple pizza with extra cheese', 7.49, 'https://pizzapalace.co.uk/cheesepizza.png', 1);
 
---Products for Taco Town
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (4, 'Chicken Taco', 'Taco filled with grilled chicken', 2.99, 'https://tacotown.co.uk/chickentaco.png', 1),
 (4, 'Beef Taco', 'Taco filled with seasoned beef', 2.99, 'https://tacotown.co.uk/beeftaco.png', 1),
@@ -68,7 +62,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (4, 'Breakfast Taco', 'Taco with eggs and bacon', 3.99, 'https://tacotown.co.uk/breakfasttaco.png', 1),
 (4, 'Taco Salad', 'Salad version of the taco', 4.49, 'https://tacotown.co.uk/tacosalad.png', 1);
 
---Products for Sandwich Shop
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (5, 'Ham Sandwich', 'Sandwich with ham, cheese, and lettuce', 4.99, 'https://sandwichshop.co.uk/hamsandwich.png', 1),
 (5, 'Turkey Sandwich', 'Sandwich with turkey, avocado, and tomato', 5.49, 'https://sandwichshop.co.uk/turkeysandwich.png', 1),
@@ -79,7 +72,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (5, 'Roast Beef Sandwich', 'Sandwich with roast beef and horseradish sauce', 6.49, 'https://sandwichshop.co.uk/roastbeefsandwich.png', 1),
 (5, 'Chicken Salad Sandwich', 'Sandwich with chicken salad filling', 5.99, 'https://sandwichshop.co.uk/chickensaladsandwich.png', 1);
 
---Products for Chinese Food Place
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (6, 'Kung Pao Chicken', 'Spicy stir-fried chicken with peanuts', 7.99, 'https://chinesefoodplace.co.uk/kungpaochicken.png', 1),
 (6, 'Sweet and Sour Pork', 'Pork with a tangy sweet and sour sauce', 8.49, 'https://chinesefoodplace.co.uk/sweetandsourpork.png', 1),
@@ -90,7 +82,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (6, 'Chow Mein', 'Stir-fried noodles with vegetables and meat', 7.49, 'https://chinesefoodplace.co.uk/chowmein.png', 1),
 (6, 'Dumplings', 'Steamed or fried dumplings filled with meat and vegetables', 5.99, 'https://chinesefoodplace.co.uk/dumplings.png', 1);
 
---Products for Pasta Place
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (7, 'Spaghetti Bolognese', 'Classic spaghetti with meat sauce', 8.99, 'https://pastaplace.co.uk/spaghettibolognese.png', 1),
 (7, 'Fettuccine Alfredo', 'Pasta in a creamy alfredo sauce', 9.49, 'https://pastaplace.co.uk/fettuccinealfredo.png', 1),
@@ -101,7 +92,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (7, 'Pasta Primavera', 'Pasta with fresh seasonal vegetables', 8.99, 'https://pastaplace.co.uk/pastaprimavera.png', 1),
 (7, 'Gnocchi', 'Potato dumplings served with pesto', 8.49, 'https://pastaplace.co.uk/gnocchi.png', 1);
 
---Producs for Doughnut Shop
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (8, 'Glazed Doughnut', 'Classic glazed doughnut', 1.99, 'https://doughnutshop.co.uk/glazeddoughnut.png', 1),
 (8, 'Chocolate Doughnut', 'Doughnut with chocolate icing', 2.49, 'https://doughnutshop.co.uk/chocolatedoughnut.png', 1),
@@ -112,7 +102,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (8, 'Boston Cream', 'Doughnut filled with cream and topped with chocolate', 2.99, 'https://doughnutshop.co.uk/bostoncream.png', 1),
 (8, 'Maple Doughnut', 'Doughnut with maple icing', 2.49, 'https://doughnutshop.co.uk/mapledoughnut.png', 1);
 
---Products for Salad Bar
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (9, 'Caesar Salad', 'Classic Caesar salad with croutons and parmesan', 5.99, 'https://saladbar.co.uk/caesarsalad.png', 1),
 (9, 'Greek Salad', 'Salad with feta cheese, olives, and vegetables', 5.49, 'https://saladbar.co.uk/greeksalad.png', 1),
@@ -123,7 +112,6 @@ INSERT INTO Products (professional_id, name, description, price, image_url, is_a
 (9, 'Quinoa Salad', 'Healthy salad with quinoa and veggies', 5.99, 'https://saladbar.co.uk/quinoasalad.png', 1),
 (9, 'Spinach Salad', 'Fresh spinach salad with a light dressing', 4.99, 'https://saladbar.co.uk/spinachsalad.png', 1);
 
---Products for Texan BBQ
 INSERT INTO Products (professional_id, name, description, price, image_url, is_available) VALUES
 (10, 'Smoked Brisket', 'Tender smoked brisket with rich flavor', 10.99, 'https://texanbbq.co.uk/smokedbrisket.png', 1),
 (10, 'BBQ Ribs', 'Juicy BBQ ribs with smoky sauce', 11.99, 'https://texanbbq.co.uk/bbqribs.png', 1),
