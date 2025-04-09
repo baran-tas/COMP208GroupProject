@@ -72,15 +72,3 @@ CREATE TABLE Reviews (
     FOREIGN KEY (product_id) REFERENCES Products(id),
     CHECK (rating BETWEEN 1 AND 5)
 );
-
---Table to manage basket items
-CREATE TABLE Basket (
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    product_id INT NOT NULL,
-    quantity INT NOT NULL DEFAULT 1,
-    date_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES Personal(id),
-    FOREIGN KEY (product_id) REFERENCES Products(id)
-);
