@@ -25,7 +25,6 @@ function StorePage({orders }:any) {
 	  return <div>Error: Invalid store ID.</div>;
 	}
 
-	console.log(orders);
   
 	const products = orders.filter((product: Product) => product.professional_id === storeId);
 
@@ -73,7 +72,7 @@ export async function getServerSideProps() {
 	const supabaseKey = process.env.SUPABASE_KEY ? process.env.SUPABASE_KEY : "";
 
 	const supabase = createClient(supabaseUrl, supabaseKey!);
-    let { data: orders, error } = await supabase
+    const { data: orders, error } = await supabase
   	.from('products')
   	.select('*')
    

@@ -16,9 +16,18 @@ function getImg() {
 }
 //{store_name,store_description,address}:any
 
-export default function StoreItem({props}:any) {
-    const {store_name,store_description,id} = props
-    console.log(props)
+type Store = {
+    id: number;
+    store_name: string;
+    store_description: string;
+    address: string;
+    phone: string;
+    tax_id: string;
+    establishment_type: string;
+    establishment_website: string;
+  };
+
+export default function StoreItem({store_name,store_description,id}:Store) {
     console.log(store_name);
     return (
         <div>
