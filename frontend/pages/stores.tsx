@@ -3,19 +3,18 @@ import Image from "next/image";
 import { figtree } from "@/public/fonts";
 import StoreItem from "@/components/storeitem";
 import { GetServerSideProps } from 'next'
-import { store } from "@/redux/store";
+import { createClient } from '@supabase/supabase-js'
 
 
-export default function StoresPage({data} :any) {
-  const {Stores} = data
-  console.log(Stores)
+
+export default function StoresPage({stores} :any) {
     return (
       <div>
         <div><NavBar /></div>
         <div>
           <div className = "w-full mt-5 grid grid-cols-3 place-items-center gap-3">
             <div>
-              {Stores.map((store) => (
+              {stores.map((store) => (
                             <StoreItem key={store.id} props = {...store}/>
 
               ))}
@@ -27,13 +26,14 @@ export default function StoresPage({data} :any) {
   }
   
 
-  export const getServerSideProps: GetServerSideProps<{ data: any }> = async () => {
-    // Update the endpoint URL to match your running Express server
-    const res = await fetch('http://localhost:3000/api/stores')
- 
-  
-    // The API should return data in the format: { stores: [...] }
-    const data: any = await res.json()
-  
-    return { props: { data } }
+  export async function getServerSideProps() {
+  const supabaseUrl = 'https://dtgzwnupievhycfggxqy.supabase.co'
+  const supabaseKey = process.env.SUPABASE_KEY
+
+  const supabase = createClient(supabaseUrl, supabaseKey!);
+    let { data: stores, error } = await supabase
+    .from('professional')
+    .select('*')
+   
+  return { props: { stores } }
   }

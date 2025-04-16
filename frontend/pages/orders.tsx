@@ -11,8 +11,6 @@ export default function OrdersPage({data} : any) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://.../data`)
-  const data = await res.json()
- 
-  return { props: { data } }
+  return { props: {  } }
+
 }

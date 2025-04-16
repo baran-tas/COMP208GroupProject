@@ -1,5 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://dtgzwnupievhycfggxqy.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+
 type Product = {
     professional_id:number,
     name:string,
@@ -665,6 +669,10 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>,
 ) {
-    console.log(Products);
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    let { data: orders, error } = await supabase
+  .from('orders')
+  .select('*')
   res.status(200).json({ Products });
 }

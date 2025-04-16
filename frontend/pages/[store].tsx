@@ -1,5 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import { createClient } from '@supabase/supabase-js'
+
 
 
 type Product = {
@@ -11,9 +13,10 @@ type Product = {
     is_available:boolean,
 }
 
-function StorePage({data }:any) {
+function StorePage({orders }:any) {
 	const router = useRouter();
 	const id = router.query.store;
+
 
 	const storeId = typeof id === 'string' ? Number(id) : NaN;
 
@@ -21,10 +24,10 @@ function StorePage({data }:any) {
 	  console.error("Invalid store id:", id);
 	  return <div>Error: Invalid store ID.</div>;
 	}
+
+	console.log(orders);
   
-	console.log(data);
-	const products = data.filter((product: Product) => product.professional_id === storeId);
-	console.log(products);
+	const products = orders.filter((product: Product) => product.professional_id === storeId);
 
 	
 
@@ -66,8 +69,13 @@ export default StorePage;
 
 
 export async function getServerSideProps() {
-	const res = await fetch(`http://localhost:3000/api/storeorders`)
-	const { Products: data } = await res.json()
+	const supabaseUrl = 'https://dtgzwnupievhycfggxqy.supabase.co'
+	const supabaseKey = process.env.SUPABASE_KEY
+
+	const supabase = createClient(supabaseUrl, supabaseKey!);
+    let { data: orders, error } = await supabase
+  	.from('products')
+  	.select('*')
    
-	return { props: { data } }
+	return { props: { orders } }
   }
