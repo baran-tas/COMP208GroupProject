@@ -5,7 +5,7 @@ import { figtree } from "@/public/fonts";
 
 
 function getImg() {
-    let placeholders = [
+    const placeholders = [
         { src: "/PH1.svg", value: 1 },
         { src: "/PH2.svg", value: 2 },
         { src: "/PH3.svg", value: 3 }

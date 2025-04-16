@@ -31,7 +31,7 @@ export default function StoresPage({stores} :any) {
   const supabaseKey = process.env.SUPABASE_KEY ? process.env.SUPABASE_KEY : "";
 
   const supabase = createClient(supabaseUrl, supabaseKey!);
-    let { data: stores, error } = await supabase
+    const { data: stores, error } = await supabase
     .from('professional')
     .select('*')
    
