@@ -28,7 +28,7 @@ export default function StoresPage({stores} :any) {
 
   export async function getServerSideProps() {
   const supabaseUrl = 'https://dtgzwnupievhycfggxqy.supabase.co'
-  const supabaseKey = process.env.SUPABASE_KEY
+  const supabaseKey = process.env.SUPABASE_KEY ? process.env.SUPABASE_KEY : "";
 
   const supabase = createClient(supabaseUrl, supabaseKey!);
     let { data: stores, error } = await supabase
