@@ -15,17 +15,17 @@ INSERT INTO Users (id, username, email, passw, account_type) VALUES
 (14, 'user4', 'user4@example.com', 'pass4', 'personal'),
 (15, 'user5', 'user5@example.com', 'pass5', 'personal');
 
-INSERT INTO Professional (id, tax_id, store_name, store_description, phone, address, establishment_type, establishment_website) VALUES
-(1, 'taxid1', 'Coffee Shop', 'Cozy cafe serving coffee and pastries', '02011588811', '231 Coffee Shop Avenue', 'Cafe', 'https://coffeeshop.co.uk'),
-(2, 'taxid2', 'Burger Place', 'Modern fast food burger joint', '02049498172', '546 Buger Place', 'Fast Food', 'https://burgerplace.co.uk'),
-(3, 'taxid3', 'Pizza Palace', 'Hot, fast, and tasty pizza', '02038392914', '723 Pizza Lane', 'Restaurant', 'https://pizzapalace.co.uk'),
-(4, 'taxid4', 'Taco Town', 'Street style tacos', '02093504003', '429 Taco City', 'Food Truck', 'https://tacotown.co.uk'),
-(5, 'taxid5', 'Sandwich Shop', 'Quick and tasty sandwiches', '02052432881', '582 Sandwich Corner', 'Cafe', 'https://sandwichshop.co.uk'),
-(6, 'taxid6', 'Chinese Food Place', 'Fresh traditional Chinese food', '02040797165', '312 China Town', 'Restaurant', 'https://chinesefoodplace.co.uk'),
-(7, 'taxid7', 'Pasta Place', 'Great, fresh pasta', '02077849621', '289 Pasta Road', 'Restaurant', 'https://pastaplace.co.uk'),
-(8, 'taxid8', 'Doughnut Shop', 'Doughnuts, doughnuts, and doughnuts', '02067370931', '689 Fried Goods Lane', 'Fast Food', 'https://doughnutshop.co.uk'),
-(9, 'taxid9', 'Salad Bar', 'Healthy salads and vegan food', '02023816087', '143 Vegan Food Street', 'Cafe', 'https://saladbar.co.uk'),
-(10, 'taxid10', 'Texan BBQ', 'Smoked Texan meat and BBQ', '02034829695', '594 Texas Lane', 'Fast Food', 'https://texanbbq.co.uk');
+INSERT INTO Professional (id, tax_id, store_name, store_description, phone, address, establishment_type, establishment_website, image_url) VALUES
+(1, 'taxid1', 'Coffee Shop', 'Cozy cafe serving coffee and pastries', '02011588811', '231 Coffee Shop Avenue', 'Cafe', 'https://coffeeshop.co.uk', 'https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(2, 'taxid2', 'Burger Place', 'Modern fast food burger joint', '02049498172', '546 Buger Place', 'Fast Food', 'https://burgerplace.co.uk', 'https://images.unsplash.com/photo-1622431062669-ed38267b6de5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(3, 'taxid3', 'Pizza Palace', 'Hot, fast, and tasty pizza', '02038392914', '723 Pizza Lane', 'Restaurant', 'https://pizzapalace.co.uk', 'https://images.unsplash.com/photo-1604624483037-489d287ae9fd?q=80&w=2123&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(4, 'taxid4', 'Taco Town', 'Street style tacos', '02093504003', '429 Taco City', 'Food Truck', 'https://tacotown.co.uk', 'https://images.unsplash.com/photo-1672426691618-2b17f4a17195?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(5, 'taxid5', 'Sandwich Shop', 'Quick and tasty sandwiches', '02052432881', '582 Sandwich Corner', 'Cafe', 'https://sandwichshop.co.uk', 'https://images.unsplash.com/photo-1564435408878-c4a4f2a3d0ed?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(6, 'taxid6', 'Chinese Food Place', 'Fresh traditional Chinese food', '02040797165', '312 China Town', 'Restaurant', 'https://chinesefoodplace.co.uk', 'https://images.unsplash.com/photo-1669410647983-ef742ccdfe6d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(7, 'taxid7', 'Pasta Place', 'Great, fresh pasta', '02077849621', '289 Pasta Road', 'Restaurant', 'https://pastaplace.co.uk', 'https://images.unsplash.com/photo-1585002400872-ec6f400e56b8?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(8, 'taxid8', 'Doughnut Shop', 'Doughnuts, doughnuts, and doughnuts', '02067370931', '689 Fried Goods Lane', 'Fast Food', 'https://doughnutshop.co.uk', 'https://images.unsplash.com/photo-1594161433297-9b55ab76acc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(9, 'taxid9', 'Salad Bar', 'Healthy salads and vegan food', '02023816087', '143 Vegan Food Street', 'Cafe', 'https://saladbar.co.uk', 'https://images.unsplash.com/photo-1625236602193-b4872df9fb71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+(10, 'taxid10', 'Texan BBQ', 'Smoked Texan meat and BBQ', '02034829695', '594 Texas Lane', 'Fast Food', 'https://texanbbq.co.uk', 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 
 INSERT INTO Personal (id, first_name, last_name, phone) VALUES
 (1, 'John', 'Doe', '1234567890'),
