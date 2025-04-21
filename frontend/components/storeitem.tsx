@@ -4,17 +4,6 @@ import Link from 'next/link';
 import { figtree } from "@/public/fonts";
 
 
-function getImg() {
-    const placeholders = [
-        { src: "/PH1.svg", value: 1 },
-        { src: "/PH2.svg", value: 2 },
-        { src: "/PH3.svg", value: 3 }
-    ]
-    const length = placeholders.length;
-    const randomNum = Math.floor(length * Math.random())
-    return placeholders[randomNum].src
-}
-//{store_name,store_description,address}:any
 
 type Store = {
     id: number;
@@ -23,18 +12,19 @@ type Store = {
     address: string;
     phone: string;
     tax_id: string;
+    image_url:string;
     establishment_type: string;
     establishment_website: string;
   };
 
-export default function StoreItem({store_name,store_description,id}:Store) {
+export default function StoreItem({store_name,store_description,image_url,id}:Store) {
     console.log(store_name);
     return (
         <div>
           <Link href={`/${id}`}>
             <div>
                 <Image
-                    src = {getImg()}
+                    src = {image_url}
                     height = "1050"
                     width = "591"
                     className = "hidden md:block hover:shadow-2xl rounded-md"
