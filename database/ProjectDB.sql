@@ -29,6 +29,7 @@ CREATE TABLE Professional (
     address VARCHAR(255) NOT NULL,
     establishment_type ENUM('Cafe', 'Restaurant', 'Food Truck', 'Fast Food') NOT NULL,
     establishment_website VARCHAR(255),
+    image_url VARCHAR(500)
     PRIMARY KEY (id),
     FOREIGN KEY (id) REFERENCES Users(id)
 );
@@ -40,7 +41,7 @@ CREATE TABLE Products (
     name VARCHAR(255) NOT NULL,
     description TEXT,
     price DECIMAL(10,2) NOT NULL,
-    image_url VARCHAR(255),
+    image_url VARCHAR(500),
     is_available TINYINT(1) DEFAULT 1,
     PRIMARY KEY (id),
     FOREIGN KEY (professional_id) REFERENCES Professional(id)
